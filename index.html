@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio - Arin Destyana Putri</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .bg-gradient-soft {
+            background: linear-gradient(135deg, #fff5f7 0%, #ffffff 100%);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 192, 203, 0.3);
+            border-radius: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background: #f472b6;
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #f472b6;
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Optimasi untuk tampilan foto HD */
+        .hd-profile {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            object-fit: cover;
+            filter: saturate(1.1) contrast(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gradient-soft text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Teks Header diubah menjadi Arin's Page -->
+            <div class="text-2xl font-bold text-pink-500">Arin's Page</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link font-medium">Beranda</a>
+                <a href="#about" class="nav-link font-medium">Tentang</a>
+                <a href="#education" class="nav-link font-medium">Pendidikan</a>
+                <a href="#family" class="nav-link font-medium">Keluarga</a>
+                <a href="#hobbies" class="nav-link font-medium">Hobi</a>
+            </div>
+            <button class="md:hidden text-pink-500 text-2xl" id="menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-white p-4 space-y-3" id="mobile-menu">
+            <a href="#home" class="block font-medium">Beranda</a>
+            <a href="#about" class="block font-medium">Tentang</a>
+            <a href="#education" class="block font-medium">Pendidikan</a>
+            <a href="#family" class="block font-medium">Keluarga</a>
+            <a href="#hobbies" class="block font-medium">Hobi</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20 px-4">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="flex-1 text-center md:text-left">
+                <h2 class="text-pink-400 font-semibold tracking-widest mb-2 uppercase">Halo, Saya</h2>
+                <h1 class="text-5xl md:text-7xl font-bold text-gray-900 mb-6">Arin Destyana Putri</h1>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                    Seorang pelajar yang berdedikasi dengan minat besar dalam olahraga dan pengembangan diri. Selamat datang di portofolio pribadi saya.
+                </p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                    <a href="#about" class="bg-pink-500 text-white px-8 py-3 rounded-full hover:bg-pink-600 transition shadow-lg shadow-pink-200">Selengkapnya</a>
+                    <a href="#" class="border-2 border-pink-500 text-pink-500 px-8 py-3 rounded-full hover:bg-pink-50 transition">Kontak Saya</a>
+                </div>
+            </div>
+            <div class="flex-1 flex justify-center">
+                <div class="relative">
+                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-pink-200 absolute -top-4 -left-4 animate-pulse"></div>
+                    <img src="https://i.ibb.co/dskPTTg7/image.jpg" alt="Foto Profil Arin Destyana Putri" class="hd-profile relative z-10 w-64 h-64 md:w-80 md:h-80 rounded-full border-8 border-white shadow-2xl floating" onerror="this.src='https://via.placeholder.com/300?text=Arin+Destyana'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About/Biodata Section -->
+    <section id="about" class="py-24 px-4 bg-white/50">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">Biodata & Tentang</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-card p-8">
+                    <h3 class="text-xl font-semibold mb-6 text-pink-500"><i class="fas fa-user-circle mr-2"></i> Info Personal</h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between border-b pb-2"><span class="font-medium">Tempat Lahir</span> <span>Magetan</span></li>
+                        <li class="flex justify-between border-b pb-2"><span class="font-medium">Tanggal Lahir</span> <span>12 Desember 2007</span></li>
+                        <li class="flex justify-between border-b pb-2"><span class="font-medium">Domisili</span> <span>Magetan, Jawa Timur</span></li>
+                        <li class="flex flex-col border-b pb-2">
+                            <span class="font-medium">Alamat Rumah</span> 
+                            <span class="text-sm text-gray-600">Ds.Mrahu rt10/rw02, Kec.Kartoharjo, Kab.Magetan</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="glass-card p-8 flex flex-col justify-center">
+                    <h3 class="text-xl font-semibold mb-6 text-pink-500 text-center md:text-left"><i class="fas fa-lightbulb mr-2"></i> Keahlian Utama</h3>
+                    <div class="space-y-6">
+                        <div class="text-center md:text-left">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-lg font-medium flex items-center">
+                                    <i class="fas fa-swimmer mr-3 text-pink-500 text-2xl"></i> 
+                                    Olahraga Renang
+                                </span> 
+                                <span class="bg-pink-100 text-pink-600 px-3 py-1 rounded-full text-sm font-bold">95%</span>
+                            </div>
+                            <div class="w-full bg-pink-100 rounded-full h-3">
+                                <div class="bg-pink-500 h-3 rounded-full transition-all duration-1000" style="width: 95%"></div>
+                            </div>
+                            <p class="mt-4 text-gray-600 text-sm leading-relaxed">
+                                Memiliki kemampuan renang tingkat lanjut dalam berbagai gaya serta daya tahan fisik yang sangat baik di dalam air.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-24 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">Riwayat Pendidikan</h2>
+            <div class="space-y-12 relative before:content-[''] before:absolute before:left-4 md:before:left-1/2 before:w-1 before:h-full before:bg-pink-200">
+                
+                <!-- SMA 2 (Terbaru) -->
+                <div class="relative flex flex-col md:flex-row items-center justify-between">
+                    <div class="md:w-5/12 ml-10 md:ml-0 glass-card p-6 order-2 md:order-1">
+                        <span class="text-pink-500 font-bold">2025-2026 - Sekarang</span>
+                        <h4 class="text-lg font-bold">SMA Negeri 1 Magetan</h4>
+                    </div>
+                    <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 bg-pink-500 border-4 border-white rounded-full z-10 hidden md:block"></div>
+                    <div class="md:w-5/12 hidden md:block order-3"></div>
+                </div>
+
+                <!-- SMA 1 -->
+                <div class="relative flex flex-col md:flex-row items-center justify-between">
+                    <div class="md:w-5/12 hidden md:block"></div>
+                    <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 bg-pink-300 border-4 border-white rounded-full z-10 hidden md:block"></div>
+                    <div class="md:w-5/12 ml-10 md:ml-0 glass-card p-6">
+                        <span class="text-pink-500 font-bold">2023 - 2024</span>
+                        <h4 class="text-lg font-bold">SMA DU 2 UNGGULAN BPPT</h4>
+                    </div>
+                </div>
+
+                <!-- SMP -->
+                <div class="relative flex flex-col md:flex-row items-center justify-between">
+                    <div class="md:w-5/12 ml-10 md:ml-0 glass-card p-6 order-2 md:order-1">
+                        <span class="text-pink-500 font-bold">2020-2023</span>
+                        <h4 class="text-lg font-bold">SMPS DAARUL QURAN CIKARANG</h4>
+                    </div>
+                    <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 bg-pink-500 border-4 border-white rounded-full z-10 hidden md:block"></div>
+                    <div class="md:w-5/12 hidden md:block order-3"></div>
+                </div>
+
+                <!-- SD -->
+                <div class="relative flex flex-col md:flex-row items-center justify-between">
+                    <div class="md:w-5/12 hidden md:block"></div>
+                    <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 bg-pink-500 border-4 border-white rounded-full z-10 hidden md:block"></div>
+                    <div class="md:w-5/12 ml-10 md:ml-0 glass-card p-6">
+                        <span class="text-pink-500 font-bold">2014 - 2020</span>
+                        <h4 class="text-lg font-bold">SDIT AL-IKHLAS Mantren</h4>
+                    </div>
+                </div>
+
+                <!-- TK -->
+                <div class="relative flex flex-col md:flex-row items-center justify-between">
+                    <div class="md:w-5/12 ml-10 md:ml-0 glass-card p-6 order-2 md:order-1">
+                        <span class="text-pink-500 font-bold">2012-2014</span>
+                        <h4 class="text-lg font-bold">TK Dharma Wanita Mrahu</h4>
+                    </div>
+                    <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 bg-pink-500 border-4 border-white rounded-full z-10 hidden md:block"></div>
+                    <div class="md:w-5/12 hidden md:block order-3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Family Section -->
+    <section id="family" class="py-24 px-4 bg-pink-50/50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">Riwayat Keluarga</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card p-6 text-center">
+                    <div class="w-20 h-20 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4 text-pink-500 text-3xl">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h4 class="font-bold">Ayah</h4>
+                    <p class="text-gray-600 text-sm">Wiraswasta</p>
+                </div>
+                <div class="glass-card p-6 text-center">
+                    <div class="w-20 h-20 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4 text-pink-500 text-3xl">
+                        <i class="fas fa-user-nurse"></i>
+                    </div>
+                    <h4 class="font-bold">Ibu</h4>
+                    <p class="text-gray-600 text-sm">Guru</p>
+                </div>
+                <div class="glass-card p-6 text-center">
+                    <div class="w-20 h-20 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4 text-pink-500 text-3xl">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4 class="font-bold">Anak ke-1</h4>
+                    <p class="text-gray-600 text-sm">Dari 3 Bersaudara</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies" class="py-24 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">Hobi & Minat</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Hobi 1 -->
+                <div class="glass-card p-8 border-t-4 border-pink-400 text-center">
+                    <div class="text-pink-500 text-5xl mb-4"><i class="fas fa-swimmer"></i></div>
+                    <h4 class="text-xl font-bold mb-2">Berenang</h4>
+                    <p class="text-gray-600 text-sm">Menjaga kebugaran dan melatih pernapasan dengan rutin berenang.</p>
+                </div>
+                <!-- Hobi 2 -->
+                <div class="glass-card p-8 border-t-4 border-pink-400 text-center">
+                    <div class="text-pink-500 text-5xl mb-4"><i class="fas fa-running"></i></div>
+                    <h4 class="text-xl font-bold mb-2">Berlari</h4>
+                    <p class="text-gray-600 text-sm">Lari pagi atau sore untuk meningkatkan stamina dan kesehatan jantung.</p>
+                </div>
+                <!-- Hobi 3 -->
+                <div class="glass-card p-8 border-t-4 border-pink-400 text-center">
+                    <div class="text-pink-500 text-5xl mb-4"><i class="fas fa-camera"></i></div>
+                    <h4 class="text-xl font-bold mb-2">Fotografi</h4>
+                    <p class="text-gray-600 text-sm">Mengabadikan momen indah dan pemandangan alam melalui lensa kamera.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Terima Kasih Telah Berkunjung</h2>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-2xl hover:text-pink-400 transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-2xl hover:text-pink-400 transition"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-2xl hover:text-pink-400 transition"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-2xl hover:text-pink-400 transition"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="text-gray-400">&copy; 2026 Arin Destyana Putri. Dibuat dengan <i class="fas fa-heart text-pink-500"></i></p>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
